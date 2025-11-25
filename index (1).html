@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Vencer a Procrastinação em 30 Dias</title>
+    <style>
+        :root {
+            --primary: #E84118; /* Cor laranja da capa do e-book */
+            --secondary: #FF6B6B;
+            --background: #FFFFFF;
+            --text: #333333;
+            --success: #2ECC71;
+            --warning: #F1C40F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 50;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(232, 65, 24, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(232, 65, 24, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: #4ECDC4;
+            color: white;
+            box-shadow: 0 4px 14px rgba(78, 205, 196, 0.4);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(78, 205, 196, 0.4);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, #FF6B6B 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            animation: float-up 5s linear infinite;
+        }
+
+        @keyframes float-up {
+            0% { transform: translateY(0) translateX(0); opacity: 0.7; }
+            100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+        }
+
+        .section {
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .problem-card {
+            border-left: 4px solid var(--secondary);
+        }
+
+        .solution-card {
+            border-left: 4px solid var(--success);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .problem-icon {
+            background-color: rgba(255, 107, 107, 0.1);
+            color: var(--secondary);
+        }
+
+        .solution-icon {
+            background-color: rgba(46, 204, 113, 0.1);
+            color: var(--success);
+        }
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .list-item svg {
+            flex-shrink: 0;
+            margin-right: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, #FF6B6B 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .cta-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .cta-content {
+            flex: 3;
+            padding-right: 2rem;
+            text-align: left;
+        }
+
+        .cta-pricing {
+            flex: 2;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .cta-card {
+                flex-direction: column;
+            }
+            
+            .cta-content {
+                padding-right: 0;
+                margin-bottom: 2rem;
+            }
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+        }
+
+        .current-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0.5rem 0;
+        }
+
+        .discount-badge {
+            display: inline-block;
+            background-color: var(--warning);
+            color: #333;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .secure-badge {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--success);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .secure-badge svg {
+            margin-right: 0.5rem;
+        }
+
+        .feature-list {
+            margin: 1.5rem 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        /* Animações */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .action-btn {
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">VencaProcrastinação</div>
+            <nav>
+                <ul>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#conteudo">Conteúdo</a></li>
+                    <li><a href="#comprar">Comprar</a></li>
+                </ul>
+            </nav>
+            <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-primary">Quero o E-book</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="particles-container" id="particles"></div>
+        <div class="container" style="z-index: 2;">
+            <div class="hero-content">
+                <h1 class="fade-in">Como Vencer a <br><span style="color: #FFEC19;">Procrastinação</span> <br>em 30 Dias</h1>
+                <p class="fade-in delay-1">O plano definitivo para transformar sua produtividade, eliminar a procrastinação e alcançar resultados extraordinários em apenas um mês.</p>
+                <div class="hero-buttons">
+                    <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-secondary pulse fade-in delay-2 action-btn">ADQUIRIR E TRANSFORMAR MINHA VIDA AGORA</a>
+                    <a href="#beneficios" class="btn" style="background-color: white; color: var(--primary);">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2;">
+            <a href="#problema-solucao" style="color: white; opacity: 0.8;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <section id="problema-solucao" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Por Que Você Precisa Deste <span class="text-gradient">E-book?</span></h2>
+                <p>Descubra como nosso método exclusivo pode transformar sua relação com o tempo e as tarefas</p>
+            </div>
+
+            <div class="problem-solution">
+                <div class="card problem-card">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div class="card-icon problem-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M15 9L9 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 style="margin-left: 1rem; font-size: 1.5rem; color: var(--secondary);">O Problema</h3>
+                    </div>
+                    
+                    <div class="list">
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Você sempre deixa tarefas importantes para última hora</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Sente-se sobrecarregado e sem foco para concluir projetos</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Desperdiça horas em distrações como redes sociais</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Tem dificuldade para manter a motivação e disciplina</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Sente culpa e ansiedade por não cumprir seus compromissos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card solution-card">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div class="card-icon solution-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 12L11 15L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 style="margin-left: 1rem; font-size: 1.5rem; color: var(--success);">A Solução</h3>
+                    </div>
+                    
+                    <div class="list">
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Um plano estruturado de 30 dias com passos diários</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Técnicas comprovadas cientificamente contra a procrastinação</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Exercícios práticos para desenvolver foco e disciplina</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Estratégias para eliminar distrações e maximizar produtividade</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Sistema de acompanhamento para manter resultados a longo prazo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios" class="section" style="background-color: #f8f9fa;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Benefícios do <span class="text-gradient">E-book</span></h2>
+                <p>O que você vai conquistar com o método de 30 dias</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">⏱️</div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary); text-align: center;">Produtividade Aumentada</h3>
+                    <p style="text-align: center; color: #666;">Realize em 1 hora o que antes levava 3, liberando tempo para o que realmente importa na sua vida.</p>
+                </div>
+                
+                <div class="card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">🎯</div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary); text-align: center;">Foco Inabalável</h3>
+                    <p style="text-align: center; color: #666;">Desenvolva a capacidade de manter o foco mesmo em ambientes cheios de distrações e interrupções.</p>
+                </div>
+                
+                <div class="card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">💪</div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary); text-align: center;">Disciplina Consistente</h3>
+                    <p style="text-align: center; color: #666;">Construa hábitos sólidos que tornam a disciplina natural, sem depender de motivação temporária.</p>
+                </div>
+                
+                <div class="card">
+                    <div style="font-size: 3rem; margin-bottom: 1rem; text-align: center;">🧠</div>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: var(--primary); text-align: center;">Clareza Mental</h3>
+                    <p style="text-align: center; color: #666;">Elimine a ansiedade e culpa associadas à procrastinação, ganhando paz mental e clareza.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conteudo" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>O Que Você Vai <span class="text-gradient">Aprender</span></h2>
+                <p>Conteúdo completo dividido em 10 capítulos transformadores</p>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+                <div class="card">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 1rem;">1</div>
+                        <h3 style="font-size: 1.25rem;">Entendendo a Procrastinação</h3>
+                    </div>
+                    <p style="color: #666; margin-bottom: 1rem;">Descubra as verdadeiras causas psicológicas da procrastinação e por que a força de vontade sozinha não é suficiente.</p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li class="list-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Os 5 tipos de procrastinadores</span>
+                        </li>
+                        <li class="list-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>O ciclo vicioso da procrastinação</span>
+                        </li>
+                        <li class="list-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Como seu cérebro sabota seus planos</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
+                        <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 1rem;">2</div>
+                        <h3 style="font-size: 1.25rem;">Autoconhecimento: A Base da Mudança</h3>
+                    </div>
+                    <p style="color: #666; margin-bottom: 1rem;">Ferramentas práticas para identificar seus padrões pessoais de procrastinação e gatilhos emocionais.</p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li class="list-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Questionário de perfil procrastinador</span>
+                        </li>
+                        <li class="list-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Diário de produtividade</span>
+                        </li>
+                        <li class="list-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Mapeamento de gatilhos emocionais</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.25rem; margin-bottom: 1.5rem;">E muito mais conteúdo para transformar sua produtividade!</p>
+                <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-primary" style="font-size: 1.25rem;">ADQUIRIR E TRANSFORMAR MINHA VIDA AGORA</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="comprar" class="cta">
+        <div class="container">
+            <div class="section-title" style="color: white;">
+                <h2>Transforme Sua Produtividade Hoje!</h2>
+                <p>Não deixe para depois o que pode transformar sua vida agora. Comece sua jornada para vencer a procrastinação!</p>
+            </div>
+
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h3 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 1rem;">E-book: Como Vencer a Procrastinação em 30 Dias</h3>
+                    <p style="color: #666; margin-bottom: 1.5rem;">O plano definitivo para transformar sua produtividade, eliminar a procrastinação e alcançar resultados extraordinários em apenas um mês.</p>
+                    
+                    <div class="feature-list">
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Plano completo de 30 dias passo a passo</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">10 capítulos com técnicas comprovadas</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Exercícios práticos e planilhas de acompanhamento</span>
+                        </div>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span style="color: #333; font-size: 16px;">Acesso imediato após a compra</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-pricing">
+                    <div class="original-price">De R$ 79,90</div>
+                    <div class="current-price pulse">R$ 19,90</div>
+                    <div class="discount-badge">Promoção Black Friday!</div>
+                    
+                    <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-primary" style="width: 100%; font-size: 1.1rem;">ADQUIRIR E TRANSFORMAR MINHA VIDA AGORA</a>
+                    
+                    <div class="secure-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Pagamento 100% seguro
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Vença a Procrastinação. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Criar partículas
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Tamanho aleatório
+                const size = Math.random() * 20 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posição aleatória
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Duração aleatória
+                const duration = Math.random() * 5 + 5;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Atraso aleatório
+                const delay = Math.random() * 5;
+                particle.style.animationDelay = `${delay}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        });
+    </script>
+</body>
+</html>
