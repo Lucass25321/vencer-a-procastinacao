@@ -7,13 +7,11 @@
     <style>
         :root {
             --primary: #E84118; /* Cor laranja da capa do e-book */
-            --secondary: #4ECDC4;
-            --accent: #FF6B6B;
+            --secondary: #FF6B6B;
             --background: #FFFFFF;
             --text: #333333;
             --success: #2ECC71;
             --warning: #F1C40F;
-            --info: #3498DB;
         }
 
         * {
@@ -34,6 +32,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
+            text-align: center;
         }
 
         header {
@@ -57,7 +56,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             cursor: pointer;
@@ -108,7 +107,7 @@
         }
 
         .btn-secondary {
-            background-color: var(--secondary);
+            background-color: #4ECDC4;
             color: white;
             box-shadow: 0 4px 14px rgba(78, 205, 196, 0.4);
         }
@@ -122,39 +121,30 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             background: linear-gradient(135deg, var(--primary) 0%, #FF6B6B 100%);
             position: relative;
             overflow: hidden;
             padding: 5rem 0;
+            text-align: center;
         }
 
         .hero-content {
             color: white;
-            max-width: 600px;
-            margin-bottom: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
-        }
-
-        .hero-image {
-            max-width: 100%;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
         }
 
         .particles-container {
@@ -181,6 +171,7 @@
 
         .section {
             padding: 5rem 0;
+            text-align: center;
         }
 
         .section-title {
@@ -201,7 +192,7 @@
         }
 
         .text-gradient {
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -213,6 +204,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             height: 100%;
+            text-align: left;
         }
 
         .card:hover {
@@ -224,12 +216,16 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .problem-solution {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
@@ -239,7 +235,7 @@
         }
 
         .problem-card {
-            border-left: 4px solid var(--accent);
+            border-left: 4px solid var(--secondary);
         }
 
         .solution-card {
@@ -258,7 +254,7 @@
 
         .problem-icon {
             background-color: rgba(255, 107, 107, 0.1);
-            color: var(--accent);
+            color: var(--secondary);
         }
 
         .solution-icon {
@@ -278,117 +274,11 @@
             margin-top: 0.25rem;
         }
 
-        .calculator {
-            background-color: #f8f9fa;
-            border-radius: 20px;
-            padding: 3rem;
-        }
-
-        .calculator-form {
-            margin-bottom: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .slider {
-            -webkit-appearance: none;
-            width: 100%;
-            height: 8px;
-            border-radius: 5px;
-            background: #eee;
-            outline: none;
-            margin: 1rem 0;
-        }
-
-        .slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background: var(--primary);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .slider::-webkit-slider-thumb:hover {
-            transform: scale(1.2);
-            box-shadow: 0 0 10px rgba(232, 65, 24, 0.5);
-        }
-
-        .slider-progress {
-            height: 8px;
-            border-radius: 5px;
-            background-color: var(--primary);
-            margin-top: -16px;
-            margin-bottom: 8px;
-        }
-
-        .results {
-            background-color: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            display: none;
-        }
-
-        .result-item {
-            padding: 1rem;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-
-        .result-highlight {
-            background-color: rgba(46, 204, 113, 0.1);
-        }
-
-        .result-title {
-            font-weight: 500;
-            color: #666;
-            margin-bottom: 0.25rem;
-        }
-
-        .result-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        .result-accent {
-            color: var(--accent);
-        }
-
-        .result-success {
-            color: var(--success);
-        }
-
-        .pie-chart {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-
-        .pie-segment {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            clip: rect(0, 200px, 200px, 100px);
-            border-radius: 50%;
-        }
-
         .cta {
             background: linear-gradient(135deg, var(--primary) 0%, #FF6B6B 100%);
             color: white;
             padding: 5rem 0;
+            text-align: center;
         }
 
         .cta-card {
@@ -398,11 +288,14 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .cta-content {
             flex: 3;
             padding-right: 2rem;
+            text-align: left;
         }
 
         .cta-pricing {
@@ -522,10 +415,6 @@
                 grid-template-columns: 1fr;
             }
             
-            .hero .container {
-                flex-direction: column;
-            }
-            
             .hero-content {
                 margin-bottom: 3rem;
                 text-align: center;
@@ -534,6 +423,20 @@
             .hero-buttons {
                 justify-content: center;
             }
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .action-btn {
+            font-size: 1.2rem;
+            padding: 1rem 2rem;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -545,7 +448,6 @@
                 <ul>
                     <li><a href="#beneficios">Benefícios</a></li>
                     <li><a href="#conteudo">Conteúdo</a></li>
-                    <li><a href="#calculadora">Calculadora</a></li>
                     <li><a href="#comprar">Comprar</a></li>
                 </ul>
             </nav>
@@ -555,17 +457,14 @@
 
     <section class="hero">
         <div class="particles-container" id="particles"></div>
-        <div class="container" style="display: flex; align-items: center; justify-content: space-between; z-index: 2;">
+        <div class="container" style="z-index: 2;">
             <div class="hero-content">
                 <h1 class="fade-in">Como Vencer a <br><span style="color: #FFEC19;">Procrastinação</span> <br>em 30 Dias</h1>
                 <p class="fade-in delay-1">O plano definitivo para transformar sua produtividade, eliminar a procrastinação e alcançar resultados extraordinários em apenas um mês.</p>
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem;" class="hero-buttons">
-                    <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-secondary pulse fade-in delay-2">QUERO TRANSFORMAR MINHA VIDA AGORA</a>
+                <div class="hero-buttons">
+                    <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-secondary pulse fade-in delay-2 action-btn">ADQUIRIR E TRANSFORMAR MINHA VIDA AGORA</a>
                     <a href="#beneficios" class="btn" style="background-color: white; color: var(--primary);">Saiba mais</a>
                 </div>
-            </div>
-            <div style="flex: 1; display: flex; justify-content: center;" class="fade-in delay-3">
-                <img src="1000010742.png" alt="Como Vencer a Procrastinação em 30 Dias" class="hero-image" style="max-width: 100%; height: auto;">
             </div>
         </div>
         <div style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2;">
@@ -594,39 +493,39 @@
                                 <path d="M9 9L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                         </div>
-                        <h3 style="margin-left: 1rem; font-size: 1.5rem; color: var(--accent);">O Problema</h3>
+                        <h3 style="margin-left: 1rem; font-size: 1.5rem; color: var(--secondary);">O Problema</h3>
                     </div>
                     
                     <div class="list">
-                        <div class="list-item">
-                            <svg class="w-5 h-5 text-accent" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Você sempre deixa tarefas importantes para última hora</span>
+                            <span style="color: #333; font-size: 16px;">Você sempre deixa tarefas importantes para última hora</span>
                         </div>
-                        <div class="list-item">
-                            <svg class="w-5 h-5 text-accent" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Sente-se sobrecarregado e sem foco para concluir projetos</span>
+                            <span style="color: #333; font-size: 16px;">Sente-se sobrecarregado e sem foco para concluir projetos</span>
                         </div>
-                        <div class="list-item">
-                            <svg class="w-5 h-5 text-accent" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Desperdiça horas em distrações como redes sociais</span>
+                            <span style="color: #333; font-size: 16px;">Desperdiça horas em distrações como redes sociais</span>
                         </div>
-                        <div class="list-item">
-                            <svg class="w-5 h-5 text-accent" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Tem dificuldade para manter a motivação e disciplina</span>
+                            <span style="color: #333; font-size: 16px;">Tem dificuldade para manter a motivação e disciplina</span>
                         </div>
-                        <div class="list-item">
-                            <svg class="w-5 h-5 text-accent" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="#FF6B6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Sente culpa e ansiedade por não cumprir seus compromissos</span>
+                            <span style="color: #333; font-size: 16px;">Sente culpa e ansiedade por não cumprir seus compromissos</span>
                         </div>
                     </div>
                 </div>
@@ -643,35 +542,35 @@
                     </div>
                     
                     <div class="list">
-                        <div class="list-item">
-                            <svg class="w-5 h-5 text-success" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Um plano estruturado de 30 dias com passos diários</span>
+                            <span style="color: #333; font-size: 16px;">Um plano estruturado de 30 dias com passos diários</span>
                         </div>
-                        <div class="list-item">
-                            <svg class="w-5 h-5 text-success" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Técnicas comprovadas cientificamente contra a procrastinação</span>
+                            <span style="color: #333; font-size: 16px;">Técnicas comprovadas cientificamente contra a procrastinação</span>
                         </div>
-                        <div class="list-item">
-                            <svg class="w-5 h-5 text-success" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Exercícios práticos para desenvolver foco e disciplina</span>
+                            <span style="color: #333; font-size: 16px;">Exercícios práticos para desenvolver foco e disciplina</span>
                         </div>
-                        <div class="list-item">
-                            <svg class="w-5 h-5 text-success" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Estratégias para eliminar distrações e maximizar produtividade</span>
+                            <span style="color: #333; font-size: 16px;">Estratégias para eliminar distrações e maximizar produtividade</span>
                         </div>
-                        <div class="list-item">
-                            <svg class="w-5 h-5 text-success" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Sistema de acompanhamento para manter resultados a longo prazo</span>
+                            <span style="color: #333; font-size: 16px;">Sistema de acompanhamento para manter resultados a longo prazo</span>
                         </div>
                     </div>
                 </div>
@@ -777,131 +676,11 @@
                         </li>
                     </ul>
                 </div>
-                
-                <div class="card">
-                    <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 1rem;">3</div>
-                        <h3 style="font-size: 1.25rem;">Preparando-se para a Transformação</h3>
-                    </div>
-                    <p style="color: #666; margin-bottom: 1rem;">Como criar o ambiente ideal e preparar sua mente para o plano de 30 dias.</p>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li class="list-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Organizando seu espaço físico</span>
-                        </li>
-                        <li class="list-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Eliminando distrações digitais</span>
-                        </li>
-                        <li class="list-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Preparação mental para a mudança</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="card">
-                    <div style="display: flex; align-items: flex-start; margin-bottom: 1rem;">
-                        <div style="width: 40px; height: 40px; border-radius: 50%; background-color: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-right: 1rem;">4</div>
-                        <h3 style="font-size: 1.25rem;">Técnicas Comprovadas Contra a Procrastinação</h3>
-                    </div>
-                    <p style="color: #666; margin-bottom: 1rem;">As estratégias mais eficazes baseadas em neurociência e psicologia comportamental.</p>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li class="list-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Técnica Pomodoro avançada</span>
-                        </li>
-                        <li class="list-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Método de fragmentação de tarefas</span>
-                        </li>
-                        <li class="list-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 5l7 7-7 7" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <span>Sistema de recompensas estratégicas</span>
-                        </li>
-                    </ul>
-                </div>
             </div>
             
             <div style="text-align: center; margin-top: 3rem;">
                 <p style="font-size: 1.25rem; margin-bottom: 1.5rem;">E muito mais conteúdo para transformar sua produtividade!</p>
-                <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-primary" style="font-size: 1.25rem;">Quero Acesso Completo</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="calculadora" class="section" style="background-color: #f8f9fa;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Calculadora de <span class="text-gradient">Produtividade</span></h2>
-                <p>Descubra quanto tempo e dinheiro você está perdendo com a procrastinação e quanto poderia ganhar ao superá-la.</p>
-            </div>
-
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
-                <div class="calculator" style="flex: 1; min-width: 300px;">
-                    <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 2rem;">Seus Dados</h3>
-                    
-                    <div class="calculator-form">
-                        <div class="form-group">
-                            <label class="form-label">Horas desperdiçadas com procrastinação por dia: <span id="hours-value">3</span>h</label>
-                            <input type="range" min="0" max="8" step="0.5" value="3" class="slider" id="hours-slider">
-                            <div class="slider-progress" id="hours-progress" style="width: 37.5%;"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Dias de trabalho por semana: <span id="days-value">5</span></label>
-                            <input type="range" min="1" max="7" step="1" value="5" class="slider" id="days-slider">
-                            <div class="slider-progress" id="days-progress" style="width: 71.4%;"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Valor da sua hora (R$): <span id="rate-value">50</span></label>
-                            <input type="range" min="10" max="200" step="5" value="50" class="slider" id="rate-slider">
-                            <div class="slider-progress" id="rate-progress" style="width: 25%;"></div>
-                        </div>
-                        
-                        <button class="btn btn-primary" style="width: 100%;" id="calculate-btn">Calcular Impacto</button>
-                    </div>
-                </div>
-                
-                <div class="results" id="results" style="flex: 1; min-width: 300px;">
-                    <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 2rem;">Seus Resultados</h3>
-                    
-                    <div class="pie-chart">
-                        <canvas id="productivity-chart" width="200" height="200"></canvas>
-                    </div>
-                    
-                    <div class="result-item">
-                        <div class="result-title">Tempo desperdiçado:</div>
-                        <div class="result-value result-accent"><span id="yearly-hours">720</span> horas por ano</div>
-                    </div>
-                    
-                    <div class="result-item">
-                        <div class="result-title">Impacto financeiro:</div>
-                        <div class="result-value result-accent">R$ <span id="financial-impact">36.000</span> por ano</div>
-                    </div>
-                    
-                    <div class="result-item result-highlight">
-                        <div class="result-title" style="color: var(--success);">Ganho potencial com nosso método:</div>
-                        <div class="result-value result-success">R$ <span id="potential-gain">25.200</span> por ano</div>
-                    </div>
-                    
-                    <div style="margin-top: 2rem;">
-                        <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-primary" style="width: 100%;">Quero Recuperar Este Valor!</a>
-                    </div>
-                </div>
+                <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-primary" style="font-size: 1.25rem;">ADQUIRIR E TRANSFORMAR MINHA VIDA AGORA</a>
             </div>
         </div>
     </section>
@@ -919,29 +698,29 @@
                     <p style="color: #666; margin-bottom: 1.5rem;">O plano definitivo para transformar sua produtividade, eliminar a procrastinação e alcançar resultados extraordinários em apenas um mês.</p>
                     
                     <div class="feature-list">
-                        <div class="list-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Plano completo de 30 dias passo a passo</span>
+                            <span style="color: #333; font-size: 16px;">Plano completo de 30 dias passo a passo</span>
                         </div>
-                        <div class="list-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>10 capítulos com técnicas comprovadas</span>
+                            <span style="color: #333; font-size: 16px;">10 capítulos com técnicas comprovadas</span>
                         </div>
-                        <div class="list-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Exercícios práticos e planilhas de acompanhamento</span>
+                            <span style="color: #333; font-size: 16px;">Exercícios práticos e planilhas de acompanhamento</span>
                         </div>
-                        <div class="list-item">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 13l4 4L19 7" stroke="var(--success)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="list-item" style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="min-width: 24px; margin-right: 10px;">
+                                <path d="M5 13l4 4L19 7" stroke="#2ECC71" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>Acesso imediato após a compra</span>
+                            <span style="color: #333; font-size: 16px;">Acesso imediato após a compra</span>
                         </div>
                     </div>
                 </div>
@@ -951,7 +730,7 @@
                     <div class="current-price pulse">R$ 19,90</div>
                     <div class="discount-badge">Promoção Black Friday!</div>
                     
-                    <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-primary" style="width: 100%; font-size: 1.1rem;">QUERO TRANSFORMAR MINHA VIDA AGORA</a>
+                    <a href="https://pay.hotmart.com/R99866499Y?off=e0sloy29&checkoutMode=10" class="btn btn-primary" style="width: 100%; font-size: 1.1rem;">ADQUIRIR E TRANSFORMAR MINHA VIDA AGORA</a>
                     
                     <div class="secure-badge">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -998,106 +777,6 @@
                 
                 particlesContainer.appendChild(particle);
             }
-            
-            // Calculadora de produtividade
-            const hoursSlider = document.getElementById('hours-slider');
-            const daysSlider = document.getElementById('days-slider');
-            const rateSlider = document.getElementById('rate-slider');
-            
-            const hoursValue = document.getElementById('hours-value');
-            const daysValue = document.getElementById('days-value');
-            const rateValue = document.getElementById('rate-value');
-            
-            const hoursProgress = document.getElementById('hours-progress');
-            const daysProgress = document.getElementById('days-progress');
-            const rateProgress = document.getElementById('rate-progress');
-            
-            const calculateBtn = document.getElementById('calculate-btn');
-            const results = document.getElementById('results');
-            
-            const yearlyHours = document.getElementById('yearly-hours');
-            const financialImpact = document.getElementById('financial-impact');
-            const potentialGain = document.getElementById('potential-gain');
-            
-            // Atualizar valores ao mover os sliders
-            hoursSlider.addEventListener('input', function() {
-                hoursValue.textContent = this.value;
-                hoursProgress.style.width = `${(this.value / 8) * 100}%`;
-            });
-            
-            daysSlider.addEventListener('input', function() {
-                daysValue.textContent = this.value;
-                daysProgress.style.width = `${(this.value / 7) * 100}%`;
-            });
-            
-            rateSlider.addEventListener('input', function() {
-                rateValue.textContent = this.value;
-                rateProgress.style.width = `${(this.value / 200) * 100}%`;
-            });
-            
-            // Calcular resultados
-            calculateBtn.addEventListener('click', function() {
-                const hours = parseFloat(hoursSlider.value);
-                const days = parseInt(daysSlider.value);
-                const rate = parseInt(rateSlider.value);
-                
-                const weeklyHours = hours * days;
-                const monthlyHours = weeklyHours * 4;
-                const yearly = monthlyHours * 12;
-                
-                const impact = yearly * rate;
-                const gain = impact * 0.7;
-                
-                yearlyHours.textContent = yearly.toLocaleString('pt-BR');
-                financialImpact.textContent = impact.toLocaleString('pt-BR');
-                potentialGain.textContent = Math.round(gain).toLocaleString('pt-BR');
-                
-                results.style.display = 'block';
-                
-                // Desenhar gráfico
-                const canvas = document.getElementById('productivity-chart');
-                const ctx = canvas.getContext('2d');
-                
-                // Limpar canvas
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                
-                // Calcular percentuais
-                const wastedPercent = (hours / 8) * 100;
-                const productivePercent = 100 - wastedPercent;
-                
-                // Desenhar gráfico
-                const centerX = canvas.width / 2;
-                const centerY = canvas.height / 2;
-                const radius = 80;
-                
-                // Desenhar parte produtiva
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.arc(centerX, centerY, radius, 0, (Math.PI * 2 * productivePercent) / 100);
-                ctx.fillStyle = '#4ECDC4';
-                ctx.fill();
-                
-                // Desenhar parte desperdiçada
-                ctx.beginPath();
-                ctx.moveTo(centerX, centerY);
-                ctx.arc(centerX, centerY, radius, (Math.PI * 2 * productivePercent) / 100, Math.PI * 2);
-                ctx.fillStyle = '#FF6B6B';
-                ctx.fill();
-                
-                // Desenhar círculo interno
-                ctx.beginPath();
-                ctx.arc(centerX, centerY, radius / 2, 0, Math.PI * 2);
-                ctx.fillStyle = 'white';
-                ctx.fill();
-                
-                // Adicionar texto
-                ctx.fillStyle = '#333';
-                ctx.font = 'bold 16px Arial';
-                ctx.textAlign = 'center';
-                ctx.fillText(`${Math.round(wastedPercent)}%`, centerX, centerY + 5);
-                ctx.font = '12px Arial';
-                ctx.fillText('desperdiçado', centerX, centerY + 20);
-            });
         });
     </script>
 </body>
